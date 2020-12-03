@@ -1,6 +1,8 @@
 import numpy as np
 import imageio as io
 import random
+from skimage.filters import threshold_yen
+from skimage.measure import regionprops
 
 def raw_mammogram(mammogram_path):
     """Dado um path para uma mamografia .tiff, a função abre a imagem e devolve-a como array
@@ -16,20 +18,23 @@ def raw_mammogram(mammogram_path):
     return raw_tif_array
 
 def binarize_breast_region(raw_mammogram_array):
-    """Dado um array de uma mamografia, converte o array RGBA num array binário (1 - tecido mamário; 2 - backround)
+    """Dado um array de uma mamografia, converte o array RGBA num array binário (1 - tecido mamário; 0 - backround) pelo método de Yen
 
     Args:
-        raw_mammogram_array (nd.array): array RGBA
+        raw_mammogram_array (ndarray): array RGBA
 
     Returns:
-        nd.array: array binário
+        ndarray: array binário
     """
 
-    binarized_array = (raw_mammogram_array > 10).astype(np.int_)
+    #binarized_array = (raw_mammogram_array > 15).astype(np.int_)
+
+    threshold = threshold_yen(raw_mammogram_array)
+    binarized_array = (raw_mammogram_array > threshold).astype(np.int_)
 
     return binarized_array
 
-def patch_corners(binarized_array,patch_size,background_percentage):
+def random_patch_corners(binarized_array,patch_size,background_percentage):
     """Função calcula o retângulo de operação da mamografia e centros possíveis dos patches. Dependendo do patch size e da background percentage,
     devolve os vértices dos patches
 
@@ -41,6 +46,112 @@ def patch_corners(binarized_array,patch_size,background_percentage):
     Returns:
         list: lista de tuplos, em que cada tuplo tem quatro vértices de um patch
     """
+    a=regionprops(binarized_array)
+    bounding_box = a[0].bbox
+    height_min = bounding_box[0]
+    width_min = bounding_box[1]
+    height_max = bounding_box[2]
+    width_max= bounding_box[3]
+
+    n_patches = int(np.floor(((width_max-width_min) * (height_max-height_min))/(patch_size*patch_size)))
+    patch_vertexes = []
+    for i in range(round(2*n_patches)): #Qual deve ser o range?
+        x_center = random.randint(width_min+(patch_size/2),width_max-(patch_size/2))
+        y_center = random.randint(height_min+(patch_size/2),height_max-(patch_size/2))
+        if binarized_array[y_center,x_center] == 1:
+            if binarized_array[int(y_center+(patch_size/2)),x_center] == 1 and binarized_array[int(y_center-(patch_size/2)),x_center]:
+                if binarized_array[y_center,int(x_center+patch_size/2)] == 1 and binarized_array[y_center,int(x_center-patch_size/2)]:
+                    patch_vertex = (int(y_center-(patch_size/2)),int(y_center+(patch_size/2)),int(x_center-patch_size/2),int(x_center+patch_size/2))
+                    b_percentage = backround_calculator(binarized_array,patch_vertex)
+                    if b_percentage > background_percentage:
+                        patch_vertexes.append(patch_vertex)
+
+    return patch_vertexes
+
+def sistematic_patch_corners(binarized_array,patch_size,background_percentage):
+    """[summary]
+
+    Args:
+        binarized_array ([type]): [description]
+        patch_size ([type]): [description]
+        background_percentage ([type]): [description]
+    """
+    a=regionprops(binarized_array)
+    bounding_box = a[0].bbox
+    height_min = bounding_box[0]
+    width_min = bounding_box[1]
+    height_max = bounding_box[2]
+    width_max= bounding_box[3]
+
+    overlapping_percentage = 0.2
+    overlap = overlapping_percentage*patch_size
+    window_size1=height_min
+    window_size2=height_min+patch_size
+    window_size3=width_min
+    window_size4=width_min+patch_size
+    n_patches_h = int(np.floor((width_max-width_min))/(patch_size-overlap))
+    n_patches_v = int(np.floor((height_max-height_min))/(patch_size-overlap))
+    patch_vertexes = []
+    for i in range(n_patches_v):
+        for n in range(n_patches_h):
+            patch_vertex = (int(window_size1),int(window_size2),int(window_size3),int(window_size4))
+            b_percentage = backround_calculator(binarized_array,patch_vertex)
+            if b_percentage > background_percentage:
+                patch_vertexes.append(patch_vertex)
+            window_size3 = window_size3 + (patch_size-overlap)
+            window_size4 = window_size4 + (patch_size-overlap)
+            n+=1
+        window_size3 = width_min
+        window_size4 = width_min+patch_size
+        window_size1 = window_size1 + (patch_size-overlap)
+        window_size2 = window_size2 + (patch_size-overlap)
+        i+=1
+
+    return patch_vertexes
+
+def backround_calculator(binary_mammogram,patch_vertex):
+    """Função calcula a percentagem de background num patch
+
+    Args:
+        binary_mammogram (ndarray): array de mamografia binária
+        patch_vertex (lista): lista com vértices dos patches
+
+    Returns:
+        float: percentagem de background num patch
+    """
+    patch = binary_mammogram[patch_vertex[0]:patch_vertex[1],patch_vertex[2]:patch_vertex[3]]
+    a = sum(sum(patch))
+    b = patch.shape[0]*patch.shape[0]
+
+    background_percentage = a/b
+
+    return background_percentage
+
+def show_centers(patch_vertexes,raw_mammogram_array):
+    """Função que representa os centros dos patches numa mamografia 
+
+    Args:
+        patch_vertexes (list): lista com os vértices dos patches
+        raw_mammogram_array (ndarray): array RGBA de uma mamografia
+
+    Returns:
+        ndarray: array RGBA de uma mamografia com o centro dos patches marcados
+    """
+    patch_side = patch_vertexes[0][1]-patch_vertexes[0][0] 
+    half_side= int(patch_side/2)
+    center_side = 20
+    for vertex in patch_vertexes:
+        raw_mammogram_array[vertex[0]+half_side-center_side:vertex[1]-half_side+center_side,vertex[2]+half_side-center_side:vertex[3]-half_side+center_side] = 0 
+    return raw_mammogram_array
+
+def draw_patches(patch_coordinates,raw_image):
+    
+    #initial_patch = raw_image
+
+    return NotImplementedError
+
+
+def nothing(binarized_array):
     height = binarized_array.shape[0]
     width = binarized_array.shape[1]
     width_max = 0
@@ -84,61 +195,7 @@ def patch_corners(binarized_array,patch_size,background_percentage):
             height_min = n
     if height_min < 1000:
         height_max = height_max + height_min
+
     if width_min == 500:
         width_min = 0    
-    #print(width_min,width_max,height_min,height_max)
-    n_patches = int(np.floor(((width_max-width_min) * (height_max-height_min))/(patch_size*patch_size)))
-    patch_vertexes = []
-    for patch in range(round(2*n_patches)): #Qual deve ser o range?
-        x_center = random.randint(width_min+patch_size,width_max-patch_size)
-        y_center = random.randint(height_min+patch_size,height_max)
-        if binarized_array[y_center,x_center] == 1:
-            if binarized_array[int(y_center+(patch_size/2)),x_center] == 1 and binarized_array[int(y_center-(patch_size/2)),x_center]:
-                if binarized_array[y_center,int(x_center+patch_size/2)] == 1 and binarized_array[y_center,int(x_center-patch_size/2)]:
-                    patch_vertex = (int(y_center-(patch_size/2)),int(y_center+(patch_size/2)),int(x_center-patch_size/2),int(x_center+patch_size/2))
-                    b_percentage = backround_calculator(binarized_array,patch_vertex)
-                    if b_percentage > background_percentage:
-                        patch_vertexes.append(patch_vertex)
-
-    return patch_vertexes
-
-def backround_calculator(binary_mammogram,patch_vertex):
-    """Função calcula a percentagem de background num patch
-
-    Args:
-        binary_mammogram (ndarray): array de mamografia binária
-        patch_vertex (lista): lista com vértices dos patches
-
-    Returns:
-        float: percentagem de background num patch
-    """
-    patch = binary_mammogram[patch_vertex[0]:patch_vertex[1],patch_vertex[2]:patch_vertex[3]]
-    a = sum(sum(patch))
-    b = patch.shape[0]*patch.shape[0]
-
-    background_percentage = a/b
-
-    return background_percentage
-
-def show_centers(patch_vertexes,raw_mammogram_array):
-    """Função que representa os centros dos patches numa mamografia 
-
-    Args:
-        patch_vertexes (list): lista com os vértices dos patches
-        raw_mammogram_array (ndarray): array RGBA de uma mamografia
-
-    Returns:
-        ndarray: array RGBA de uma mamografia com o centro dos patches marcados
-    """
-    for vertex in patch_vertexes:
-        raw_mammogram_array[vertex[0]+230:vertex[1]-230,vertex[2]+230:vertex[3]-230] = 1
-    return raw_mammogram_array
-
-def draw_patches(patch_coordinates,raw_image):
-    
-    initial_patch = raw_image
-
-    return NotImplementedError
-
-
-
+    print('Bounding box: ',height_min,width_min,height_max,width_max)
