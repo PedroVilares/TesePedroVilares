@@ -39,6 +39,34 @@ def fix_path(path_list):
         
     return new_paths
 
+def fix_view(dataFile,column):
+
+    n=0
+    n_view=0
+    for view in list(dataFile[column]):
+        if view == ' LO':
+            n_view = 4
+        elif view == ' LCC':
+            n_view = 2
+        elif view == ' RO':
+            n_view = 3
+        elif view == ' RCC':
+            n_view = 1
+        dataFile.loc[n,column] = n_view
+        n += 1
+        
+    return dataFile
+
+def merge_csv(feature_dataframe,image_dataframe):
+    for feature_row in range(len(feature_dataframe)):
+        for real_row in range(len(image_dataframe)):
+            if feature_dataframe.loc[feature_row,'patient_id'] == image_dataframe.loc[real_row,'patient_id']:
+                if feature_dataframe.loc[feature_row,'study_id']== image_dataframe.loc[real_row,'study_id']:
+                    if feature_dataframe.loc[feature_row,'image_view'] == image_dataframe.loc[real_row,'image_type_name']:
+                        feature_dataframe.loc[feature_row,'image_filename'] = image_dataframe.loc[real_row,'image_filename']
+
+    return feature_dataframe
+
 def dataframe_by_view(dataframe,view):
     """
     Builds dataframe with images taken from view.

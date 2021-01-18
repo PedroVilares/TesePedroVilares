@@ -21,6 +21,28 @@ def generate(dataframe,image_height,image_width,batch_size,c_mode):
         target_size= (image_height,image_width),
         color_mode= c_mode,
         class_mode= "categorical")
+        
+    return data
+
+def generate_and_save(dataframe,image_height,image_width,batch_size,c_mode,save_path):
+    """
+    Generates batches of data using Image Data Generator
+    """
+
+    data_generator = ImageDataGenerator(preprocessing_function=preprocessing.preprocessing_mammography)
+    data_generator
+
+    data = data_generator.flow_from_dataframe(
+        dataframe= dataframe,
+        x_col= "paths",
+        y_col= "labels",
+        batch_size= batch_size,
+        target_size= (image_height,image_width),
+        color_mode= c_mode,
+        class_mode= "categorical",
+        save_to_dir= save_path,
+        save_format= "jpeg")
+        
     return data
 
 def convert(tif_paths):
@@ -40,3 +62,20 @@ def convert(tif_paths):
         #print('Saved '+save_path)
     
     return tiff_paths
+
+def generate_patch_data(directory_path,image_height,image_width,batch_size,c_mode):
+
+    """
+    Generates batches of data using Image Data Generator
+    """
+
+    data_generator = ImageDataGenerator(preprocessing_function=preprocessing.preprocessing_mammography)
+
+    data = data_generator.flow_from_directory(
+        directory= directory_path,
+        batch_size= batch_size,
+        target_size= (image_height,image_width),
+        color_mode= c_mode,
+        class_mode= "binary")
+        
+    return data
