@@ -1,0 +1,576 @@
+
+ Patient 1 | Normal | Density: 4.0
+patient_1: Patches 80 | Positive Patches 3 | Ratio 0.04 
+Ratio: 0.04 
+
+ Patient 2 | Suspicious | Density:  3
+patient_2: Patches 131 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 3 | Suspicious | Density:  3
+patient_3: Patches 89 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 4 | Suspicious | Density:  3
+patient_4: Patches 255 | Positive Patches 8 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 5 | Suspicious | Density:  2
+patient_5: Patches 82 | Positive Patches 9 | Ratio 0.11 
+Ratio: 0.11 
+
+ Patient 6 | Suspicious | Density:  3
+patient_6: Patches 54 | Positive Patches 2 | Ratio 0.04 
+Ratio: 0.04 
+
+ Patient 7 | Normal | Density: 2.0
+patient_7: Patches 213 | Positive Patches 1 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 8 | Suspicious | Density:  NaN
+patient_8: Patches 83 | Positive Patches 4 | Ratio 0.05 
+Ratio: 0.05 
+
+ Patient 9 | Suspicious | Density:  3
+patient_9: Patches 240 | Positive Patches 7 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 10 | Normal | Density: 4.0
+patient_10: Patches 87 | Positive Patches 2 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 11 | Suspicious | Density:  1
+patient_11: Patches 276 | Positive Patches 10 | Ratio 0.04 
+Ratio: 0.04 
+
+ Patient 12 | Normal | Density: 2.0
+patient_12: Patches 118 | Positive Patches 10 | Ratio 0.08 
+Ratio: 0.08 
+
+ Patient 13 | Suspicious | Density:  2
+patient_13: Patches 74 | Positive Patches 9 | Ratio 0.12 
+Ratio: 0.12 
+
+ Patient 14 | Normal | Density: 1.0
+patient_14: Patches 96 | Positive Patches 6 | Ratio 0.06 
+Ratio: 0.06 
+
+ Patient 15 | Normal | Density: nan
+patient_15: Patches 124 | Positive Patches 2 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 16 | Normal | Density: 2.0
+patient_16: Patches 85 | Positive Patches 3 | Ratio 0.04 
+Ratio: 0.04 
+
+ Patient 17 | Normal | Density: nan
+patient_17: Patches 56 | Positive Patches 1 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 18 | Normal | Density: 4.0
+patient_18: Patches 115 | Positive Patches 6 | Ratio 0.05 
+Ratio: 0.05 
+
+ Patient 19 | Suspicious | Density:  3
+patient_19: Patches 133 | Positive Patches 1 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 20 | Normal | Density: nan
+patient_20: Patches 118 | Positive Patches 3 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 21 | Suspicious | Density:  1
+patient_21: Patches 249 | Positive Patches 8 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 22 | Normal | Density: 3.0
+patient_22: Patches 118 | Positive Patches 1 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 23 | Normal | Density: nan
+patient_23: Patches 80 | Positive Patches 8 | Ratio 0.10 
+Ratio: 0.1 
+
+ Patient 24 | Suspicious | Density:  NaN
+patient_24: Patches 227 | Positive Patches 3 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 25 | Suspicious | Density:  4
+patient_25: Patches 76 | Positive Patches 1 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 26 | Suspicious | Density:  2
+patient_26: Patches 145 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 27 | Suspicious | Density:  1
+patient_27: Patches 201 | Positive Patches 14 | Ratio 0.07 
+Ratio: 0.07 
+
+ Patient 28 | Suspicious | Density:  3
+patient_28: Patches 329 | Positive Patches 7 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 29 | Normal | Density: 4.0
+patient_29: Patches 64 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 30 | Normal | Density: nan
+patient_30: Patches 392 | Positive Patches 14 | Ratio 0.04 
+Ratio: 0.04 
+
+ Patient 31 | Suspicious | Density:  3
+patient_31: Patches 143 | Positive Patches 1 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 32 | Suspicious | Density:  4
+patient_32: Patches 46 | Positive Patches 3 | Ratio 0.07 
+Ratio: 0.07 
+
+ Patient 33 | Suspicious | Density:  2
+patient_33: Patches 83 | Positive Patches 6 | Ratio 0.07 
+Ratio: 0.07 
+
+ Patient 34 | Suspicious | Density:  2
+patient_34: Patches 146 | Positive Patches 6 | Ratio 0.04 
+Ratio: 0.04 
+
+ Patient 35 | Normal | Density: nan
+patient_35: Patches 81 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 36 | Normal | Density: 3.0
+patient_36: Patches 102 | Positive Patches 3 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 37 | Normal | Density: nan
+patient_37: Patches 47 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 38 | Suspicious | Density:  2
+patient_38: Patches 24 | Positive Patches 3 | Ratio 0.12 
+Ratio: 0.12 
+
+ Patient 39 | Normal | Density: 2.0
+patient_39: Patches 744 | Positive Patches 16 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 40 | Normal | Density: 3.0
+patient_40: Patches 55 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 41 | Suspicious | Density:  NaN
+patient_41: Patches 177 | Positive Patches 5 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 42 | Normal | Density: 4.0
+patient_42: Patches 85 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 43 | Normal | Density: 3.0
+patient_43: Patches 36 | Positive Patches 1 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 44 | Suspicious | Density:  3
+patient_44: Patches 219 | Positive Patches 4 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 45 | Normal | Density: 4.0
+patient_45: Patches 218 | Positive Patches 4 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 46 | Suspicious | Density:  1
+patient_46: Patches 54 | Positive Patches 3 | Ratio 0.06 
+Ratio: 0.06 
+
+ Patient 47 | Suspicious | Density:  3
+patient_47: Patches 46 | Positive Patches 11 | Ratio 0.24 
+Ratio: 0.24 
+
+ Patient 48 | Suspicious | Density:  NaN
+patient_48: Patches 99 | Positive Patches 3 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 49 | Suspicious | Density:  1
+patient_49: Patches 350 | Positive Patches 4 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 50 | Normal | Density: 1.0
+patient_50: Patches 38 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 51 | Normal | Density: 1.0
+patient_51: Patches 93 | Positive Patches 10 | Ratio 0.11 
+Ratio: 0.11 
+
+ Patient 52 | Suspicious | Density:  1
+patient_52: Patches 54 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 53 | Normal | Density: 2.0
+patient_53: Patches 141 | Positive Patches 8 | Ratio 0.06 
+Ratio: 0.06 
+
+ Patient 54 | Suspicious | Density:  4
+patient_54: Patches 99 | Positive Patches 9 | Ratio 0.09 
+Ratio: 0.09 
+
+ Patient 55 | Normal | Density: nan
+patient_55: Patches 240 | Positive Patches 7 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 56 | Normal | Density: nan
+patient_56: Patches 33 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 57 | Normal | Density: nan
+patient_57: Patches 75 | Positive Patches 10 | Ratio 0.13 
+Ratio: 0.13 
+
+ Patient 58 | Normal | Density: 4.0
+patient_58: Patches 41 | Positive Patches 1 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 59 | Normal | Density: 3.0
+patient_59: Patches 90 | Positive Patches 4 | Ratio 0.04 
+Ratio: 0.04 
+
+ Patient 60 | Suspicious | Density:  2
+patient_60: Patches 52 | Positive Patches 7 | Ratio 0.13 
+Ratio: 0.13 
+
+ Patient 61 | Normal | Density: nan
+patient_61: Patches 253 | Positive Patches 4 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 62 | Normal | Density: 4.0
+patient_62: Patches 33 | Positive Patches 5 | Ratio 0.15 
+Ratio: 0.15 
+
+ Patient 63 | Suspicious | Density:  1
+patient_63: Patches 66 | Positive Patches 4 | Ratio 0.06 
+Ratio: 0.06 
+
+ Patient 64 | Normal | Density: 3.0
+patient_64: Patches 92 | Positive Patches 1 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 65 | Normal | Density: 1.0
+patient_65: Patches 142 | Positive Patches 1 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 66 | Suspicious | Density:  1
+patient_66: Patches 147 | Positive Patches 3 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 67 | Suspicious | Density:  2
+patient_67: Patches 141 | Positive Patches 1 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 68 | Normal | Density: 3.0
+patient_68: Patches 158 | Positive Patches 8 | Ratio 0.05 
+Ratio: 0.05 
+
+ Patient 69 | Normal | Density: 1.0
+patient_69: Patches 179 | Positive Patches 4 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 70 | Suspicious | Density:  2
+patient_70: Patches 154 | Positive Patches 4 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 71 | Normal | Density: nan
+patient_71: Patches 77 | Positive Patches 7 | Ratio 0.09 
+Ratio: 0.09 
+
+ Patient 72 | Normal | Density: 4.0
+patient_72: Patches 125 | Positive Patches 4 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 73 | Normal | Density: 3.0
+patient_73: Patches 195 | Positive Patches 4 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 74 | Normal | Density: nan
+patient_74: Patches 56 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 75 | Suspicious | Density:  1
+patient_75: Patches 73 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 76 | Normal | Density: nan
+patient_76: Patches 93 | Positive Patches 7 | Ratio 0.08 
+Ratio: 0.08 
+
+ Patient 77 | Normal | Density: nan
+patient_77: Patches 121 | Positive Patches 8 | Ratio 0.07 
+Ratio: 0.07 
+
+ Patient 78 | Normal | Density: 1.0
+patient_78: Patches 56 | Positive Patches 8 | Ratio 0.14 
+Ratio: 0.14 
+
+ Patient 79 | Normal | Density: 2.0
+patient_79: Patches 61 | Positive Patches 1 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 80 | Normal | Density: nan
+patient_80: Patches 116 | Positive Patches 1 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 81 | Normal | Density: 2.0
+patient_81: Patches 198 | Positive Patches 1 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 82 | Suspicious | Density:  2
+patient_82: Patches 171 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 83 | Suspicious | Density:  2
+patient_83: Patches 305 | Positive Patches 9 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 84 | Normal | Density: 1.0
+patient_84: Patches 63 | Positive Patches 2 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 85 | Normal | Density: 2.0
+patient_85: Patches 79 | Positive Patches 1 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 86 | Normal | Density: 4.0
+patient_86: Patches 68 | Positive Patches 7 | Ratio 0.10 
+Ratio: 0.1 
+
+ Patient 87 | Suspicious | Density:  2
+patient_87: Patches 102 | Positive Patches 4 | Ratio 0.04 
+Ratio: 0.04 
+
+ Patient 88 | Normal | Density: 3.0
+patient_88: Patches 118 | Positive Patches 7 | Ratio 0.06 
+Ratio: 0.06 
+
+ Patient 89 | Suspicious | Density:  1
+patient_89: Patches 401 | Positive Patches 15 | Ratio 0.04 
+Ratio: 0.04 
+
+ Patient 90 | Normal | Density: nan
+patient_90: Patches 61 | Positive Patches 1 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 91 | Suspicious | Density:  2
+patient_91: Patches 87 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 92 | Suspicious | Density:  3
+patient_92: Patches 70 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 93 | Normal | Density: nan
+patient_93: Patches 143 | Positive Patches 6 | Ratio 0.04 
+Ratio: 0.04 
+
+ Patient 94 | Suspicious | Density:  1
+patient_94: Patches 100 | Positive Patches 7 | Ratio 0.07 
+Ratio: 0.07 
+
+ Patient 95 | Normal | Density: nan
+patient_95: Patches 58 | Positive Patches 1 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 96 | Normal | Density: 4.0
+patient_96: Patches 76 | Positive Patches 7 | Ratio 0.09 
+Ratio: 0.09 
+
+ Patient 97 | Suspicious | Density:  1
+patient_97: Patches 166 | Positive Patches 13 | Ratio 0.08 
+Ratio: 0.08 
+
+ Patient 98 | Suspicious | Density:  1
+patient_98: Patches 49 | Positive Patches 4 | Ratio 0.08 
+Ratio: 0.08 
+
+ Patient 99 | Suspicious | Density:  3
+patient_99: Patches 119 | Positive Patches 5 | Ratio 0.04 
+Ratio: 0.04 
+
+ Patient 100 | Suspicious | Density:  3
+patient_100: Patches 141 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 101 | Normal | Density: 4.0
+patient_101: Patches 161 | Positive Patches 5 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 102 | Normal | Density: nan
+patient_102: Patches 53 | Positive Patches 2 | Ratio 0.04 
+Ratio: 0.04 
+
+ Patient 103 | Suspicious | Density:  2
+patient_103: Patches 45 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 104 | Suspicious | Density:  4
+patient_104: Patches 138 | Positive Patches 2 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 105 | Suspicious | Density:  1
+patient_105: Patches 106 | Positive Patches 5 | Ratio 0.05 
+Ratio: 0.05 
+
+ Patient 106 | Normal | Density: nan
+patient_106: Patches 42 | Positive Patches 6 | Ratio 0.14 
+Ratio: 0.14 
+
+ Patient 107 | Suspicious | Density:  1
+patient_107: Patches 82 | Positive Patches 8 | Ratio 0.10 
+Ratio: 0.1 
+
+ Patient 108 | Suspicious | Density:  1
+patient_108: Patches 117 | Positive Patches 1 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 109 | Suspicious | Density:  1
+patient_109: Patches 56 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 110 | Suspicious | Density:  1
+patient_110: Patches 149 | Positive Patches 5 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 111 | Normal | Density: 3.0
+patient_111: Patches 105 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 112 | Suspicious | Density:  3
+patient_112: Patches 190 | Positive Patches 3 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 113 | Suspicious | Density:  2
+patient_113: Patches 72 | Positive Patches 8 | Ratio 0.11 
+Ratio: 0.11 
+
+ Patient 114 | Suspicious | Density:  NaN
+patient_114: Patches 66 | Positive Patches 9 | Ratio 0.14 
+Ratio: 0.14 
+
+ Patient 115 | Normal | Density: 3.0
+patient_115: Patches 127 | Positive Patches 8 | Ratio 0.06 
+Ratio: 0.06 
+
+ Patient 116 | Normal | Density: 1.0
+patient_116: Patches 39 | Positive Patches 1 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 117 | Normal | Density: 2.0
+patient_117: Patches 107 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 118 | Suspicious | Density:  1
+patient_118: Patches 28 | Positive Patches 1 | Ratio 0.04 
+Ratio: 0.04 
+
+ Patient 119 | Suspicious | Density:  1
+patient_119: Patches 78 | Positive Patches 11 | Ratio 0.14 
+Ratio: 0.14 
+
+ Patient 120 | Normal | Density: 2.0
+patient_120: Patches 52 | Positive Patches 6 | Ratio 0.12 
+Ratio: 0.12 
+
+ Patient 121 | Normal | Density: nan
+patient_121: Patches 95 | Positive Patches 1 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 122 | Suspicious | Density:  1
+patient_122: Patches 198 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 123 | Suspicious | Density:  2
+patient_123: Patches 79 | Positive Patches 3 | Ratio 0.04 
+Ratio: 0.04 
+
+ Patient 124 | Suspicious | Density:  3
+patient_124: Patches 68 | Positive Patches 7 | Ratio 0.10 
+Ratio: 0.1 
+
+ Patient 125 | Suspicious | Density:  1
+patient_125: Patches 116 | Positive Patches 1 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 126 | Normal | Density: 3.0
+patient_126: Patches 152 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 127 | Normal | Density: 3.0
+patient_127: Patches 79 | Positive Patches 2 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 128 | Suspicious | Density:  3
+patient_128: Patches 51 | Positive Patches 4 | Ratio 0.08 
+Ratio: 0.08 
+
+ Patient 129 | Suspicious | Density:  3
+patient_129: Patches 217 | Positive Patches 7 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 130 | Suspicious | Density:  3
+patient_130: Patches 158 | Positive Patches 3 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 131 | Normal | Density: nan
+patient_131: Patches 56 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 132 | Suspicious | Density:  2
+patient_132: Patches 94 | Positive Patches 11 | Ratio 0.12 
+Ratio: 0.12 
+
+ Patient 133 | Normal | Density: 3.0
+patient_133: Patches 226 | Positive Patches 6 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 134 | Normal | Density: 4.0
+patient_134: Patches 79 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 135 | Suspicious | Density:  1
+patient_135: Patches 43 | Positive Patches 3 | Ratio 0.07 
+Ratio: 0.07 
+
+ Patient 136 | Normal | Density: nan
+patient_136: Patches 136 | Positive Patches 9 | Ratio 0.07 
+Ratio: 0.07 
+
+ Patient 137 | Suspicious | Density:  3
+patient_137: Patches 186 | Positive Patches 2 | Ratio 0.01 
+Ratio: 0.01 
+
+ Patient 138 | Normal | Density: 1.0
+patient_138: Patches 148 | Positive Patches 4 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 139 | Suspicious | Density:  2
+patient_139: Patches 125 | Positive Patches 2 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 140 | Suspicious | Density:  NaN
+patient_140: Patches 70 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 141 | Suspicious | Density:  3
+patient_141: Patches 66 | Positive Patches 0 | Ratio 0.00 
+Ratio: 0.0 
+
+ Patient 142 | Normal | Density: 2.0
+patient_142: Patches 374 | Positive Patches 8 | Ratio 0.02 
+Ratio: 0.02 
+
+ Patient 143 | Suspicious | Density:  4
+patient_143: Patches 122 | Positive Patches 4 | Ratio 0.03 
+Ratio: 0.03 
+
+ Patient 144 | Normal | Density: 2.0
+patient_144: Patches 234 | Positive Patches 6 | Ratio 0.03 
+Ratio: 0.03 

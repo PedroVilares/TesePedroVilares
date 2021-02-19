@@ -1,0 +1,434 @@
+Patient,Ground Truth,Density,Image View,Patches,Suspicious
+Patient 1,Normal,4.0, LCC,11,0
+Patient 1,Normal,4.0, LO,12,0
+Patient 1,Normal,4.0, RCC,23,2
+Patient 1,Normal,4.0, RO,34,3
+Patient 2,Suspicious, 3,LCC,65,1
+Patient 2,Suspicious, 3,LML,66,0
+Patient 3,Suspicious, 3, LCC,40,1
+Patient 3,Suspicious, 3, LO,49,1
+Patient 4,Suspicious, 3, LCC,55,1
+Patient 4,Suspicious, 3, LO,72,0
+Patient 4,Suspicious, 3, RCC,53,4
+Patient 4,Suspicious, 3, RO,75,6
+Patient 5,Suspicious, 2,RCC,33,8
+Patient 5,Suspicious, 2,RML,49,5
+Patient 6,Suspicious, 3, LCC,15,0
+Patient 6,Suspicious, 3, LO,14,0
+Patient 6,Suspicious, 3, RCC,4,0
+Patient 6,Suspicious, 3, RO,21,3
+Patient 7,Normal,2.0,LCC,43,1
+Patient 7,Normal,2.0,LCC1,53,0
+Patient 7,Normal,2.0,LO,54,1
+Patient 7,Normal,2.0,LO1,63,2
+Patient 8,Suspicious, NaN,LCC,41,7
+Patient 8,Suspicious, NaN,LO,42,3
+Patient 9,Suspicious, 3, LCC,38,9
+Patient 9,Suspicious, 3, LCC1,37,0
+Patient 9,Suspicious, 3, LO,36,1
+Patient 9,Suspicious, 3, LO1,38,1
+Patient 9,Suspicious, 3, RCC,21,4
+Patient 9,Suspicious, 3, RCC1,22,4
+Patient 9,Suspicious, 3, RO,22,5
+Patient 9,Suspicious, 3, RO1,26,3
+Patient 10,Normal,4.0,LCC,43,4
+Patient 10,Normal,4.0,LO,44,5
+Patient 11,Suspicious, 1,RCC,61,10
+Patient 11,Suspicious, 1,RCC1,61,10
+Patient 11,Suspicious, 1,RO,77,3
+Patient 11,Suspicious, 1,RO1,77,3
+Patient 12,Normal,2.0,RCC,24,3
+Patient 12,Normal,2.0,RCC1,24,3
+Patient 12,Normal,2.0,RO,35,4
+Patient 12,Normal,2.0,RO1,35,4
+Patient 13,Suspicious, 2,RCC,36,6
+Patient 13,Suspicious, 2,RML,38,8
+Patient 14,Normal,1.0,RCC,38,5
+Patient 14,Normal,1.0,RO,58,7
+Patient 15,Normal,,RCC,63,4
+Patient 15,Normal,,RO,61,3
+Patient 16,Normal,2.0, RCC,38,4
+Patient 16,Normal,2.0, RO,47,1
+Patient 17,Normal,,LCC,27,1
+Patient 17,Normal,,LO,29,1
+Patient 18,Normal,4.0,LCC,31,2
+Patient 18,Normal,4.0,LML,31,1
+Patient 18,Normal,4.0,RCC,22,5
+Patient 18,Normal,4.0,RML,31,4
+Patient 19,Suspicious, 3,LCC,63,2
+Patient 19,Suspicious, 3,LML,70,3
+Patient 20,Normal,, LCC,27,0
+Patient 20,Normal,, LO,29,1
+Patient 20,Normal,, RCC,31,5
+Patient 20,Normal,, RO,31,3
+Patient 21,Suspicious, 1, LCC,25,0
+Patient 21,Suspicious, 1, LCC1,30,0
+Patient 21,Suspicious, 1, LO,21,0
+Patient 21,Suspicious, 1, LO1,29,0
+Patient 21,Suspicious, 1, RCC,34,3
+Patient 21,Suspicious, 1, RCC1,36,4
+Patient 21,Suspicious, 1, RO,36,3
+Patient 21,Suspicious, 1, RO1,38,4
+Patient 22,Normal,3.0,LCC,65,6
+Patient 22,Normal,3.0,LO,53,2
+Patient 23,Normal,,RCC,33,8
+Patient 23,Normal,,RML,47,9
+Patient 24,Suspicious, NaN, LCC,55,3
+Patient 24,Suspicious, NaN, LO,62,0
+Patient 24,Suspicious, NaN, RCC,52,4
+Patient 24,Suspicious, NaN, RO,58,1
+Patient 25,Suspicious, 4,LCC,39,2
+Patient 25,Suspicious, 4,LO,37,2
+Patient 26,Suspicious, 2, LCC,36,0
+Patient 26,Suspicious, 2, LCC1,36,0
+Patient 26,Suspicious, 2, LO,40,1
+Patient 26,Suspicious, 2, LO1,33,1
+Patient 27,Suspicious, 1, RCC,49,4
+Patient 27,Suspicious, 1, RCC1,51,6
+Patient 27,Suspicious, 1, RO,50,4
+Patient 27,Suspicious, 1, RO1,51,6
+Patient 28,Suspicious, 3,LCC,80,0
+Patient 28,Suspicious, 3,LO,79,3
+Patient 28,Suspicious, 3,RCC,82,14
+Patient 28,Suspicious, 3,RO,88,11
+Patient 29,Normal,4.0,LCC,30,0
+Patient 29,Normal,4.0,LO,34,0
+Patient 30,Normal,, LCC,47,1
+Patient 30,Normal,, LCC1,52,0
+Patient 30,Normal,, LO,57,1
+Patient 30,Normal,, LO1,57,0
+Patient 30,Normal,, RCC,38,8
+Patient 30,Normal,, RCC1,34,4
+Patient 30,Normal,, RO,57,8
+Patient 30,Normal,, RO1,50,2
+Patient 31,Suspicious, 3,RO,78,0
+Patient 31,Suspicious, 3,RO1,65,5
+Patient 32,Suspicious, 4,RCC,20,4
+Patient 32,Suspicious, 4,RML,26,3
+Patient 33,Suspicious, 2, RCC,33,6
+Patient 33,Suspicious, 2, RO,50,6
+Patient 34,Suspicious, 2, LCC,43,2
+Patient 34,Suspicious, 2, LO,40,0
+Patient 34,Suspicious, 2, RCC,30,4
+Patient 34,Suspicious, 2, RO,33,4
+Patient 35,Normal,,LCC,37,0
+Patient 35,Normal,,LML,44,0
+Patient 36,Normal,3.0,RCC,56,4
+Patient 36,Normal,3.0,RO,46,1
+Patient 37,Normal,,LCC,20,0
+Patient 37,Normal,,LML,27,2
+Patient 38,Suspicious, 2,RCC,10,2
+Patient 38,Suspicious, 2,RML,14,3
+Patient 39,Normal,2.0, LCC,91,1
+Patient 39,Normal,2.0, LCC1,98,0
+Patient 39,Normal,2.0, LO,95,1
+Patient 39,Normal,2.0, LO1,96,1
+Patient 39,Normal,2.0, RCC,93,6
+Patient 39,Normal,2.0, RCC1,93,7
+Patient 39,Normal,2.0, RO,90,7
+Patient 39,Normal,2.0, RO1,88,7
+Patient 40,Normal,3.0,LCC,25,1
+Patient 40,Normal,3.0,LML,30,2
+Patient 41,Suspicious, NaN, LCC,47,0
+Patient 41,Suspicious, NaN, LO,48,1
+Patient 41,Suspicious, NaN, RCC,43,7
+Patient 41,Suspicious, NaN, RO,39,7
+Patient 42,Normal,4.0,LCC,40,1
+Patient 42,Normal,4.0,LO,45,1
+Patient 43,Normal,3.0,LCC,16,1
+Patient 43,Normal,3.0,LO,20,1
+Patient 44,Suspicious, 3, LCC,48,0
+Patient 44,Suspicious, 3, LO,62,0
+Patient 44,Suspicious, 3, RCC,44,5
+Patient 44,Suspicious, 3, RO,65,3
+Patient 45,Normal,4.0, LCC,52,1
+Patient 45,Normal,4.0, LO,57,0
+Patient 45,Normal,4.0, RCC,50,3
+Patient 45,Normal,4.0, RO,59,5
+Patient 46,Suspicious, 1, LCC,18,0
+Patient 46,Suspicious, 1, LO,25,0
+Patient 46,Suspicious, 1, RCC,3,2
+Patient 46,Suspicious, 1, RO,8,2
+Patient 47,Suspicious, 3,RCC,16,8
+Patient 47,Suspicious, 3,RO,30,7
+Patient 48,Suspicious, NaN, LCC,25,0
+Patient 48,Suspicious, NaN, LO,29,2
+Patient 48,Suspicious, NaN, RCC,20,5
+Patient 48,Suspicious, NaN, RO,25,3
+Patient 49,Suspicious, 1,RCC,92,5
+Patient 49,Suspicious, 1,RCC1,87,3
+Patient 49,Suspicious, 1,RO,88,2
+Patient 49,Suspicious, 1,RO1,83,4
+Patient 50,Normal,1.0,LCC,18,0
+Patient 50,Normal,1.0,LO,20,0
+Patient 51,Normal,1.0,RCC,45,6
+Patient 51,Normal,1.0,RO,48,12
+Patient 52,Suspicious, 1,LCC,27,0
+Patient 52,Suspicious, 1,LML,27,0
+Patient 53,Normal,2.0,RCC,32,4
+Patient 53,Normal,2.0,RCC1,30,5
+Patient 53,Normal,2.0,RO,39,3
+Patient 53,Normal,2.0,RO1,40,5
+Patient 54,Suspicious, 4,RCC,22,5
+Patient 54,Suspicious, 4,RCC1,20,7
+Patient 54,Suspicious, 4,RML,30,3
+Patient 54,Suspicious, 4,RML1,27,3
+Patient 55,Normal,, LCC,58,3
+Patient 55,Normal,, LO,63,2
+Patient 55,Normal,, RCC,53,9
+Patient 55,Normal,, RO,66,8
+Patient 56,Normal,,LCC,33,0
+Patient 57,Normal,,LCC,21,0
+Patient 57,Normal,,LCC1,17,4
+Patient 57,Normal,,LO,20,8
+Patient 57,Normal,,LO1,17,6
+Patient 58,Normal,4.0,LCC,20,0
+Patient 58,Normal,4.0,LO,21,2
+Patient 59,Normal,3.0,LCC,19,0
+Patient 59,Normal,3.0,LO,31,0
+Patient 59,Normal,3.0,RCC,14,3
+Patient 59,Normal,3.0,RO,26,3
+Patient 60,Suspicious, 2,RCC,14,1
+Patient 60,Suspicious, 2,RML,38,10
+Patient 61,Normal,,LCC,65,2
+Patient 61,Normal,,LCC1,65,3
+Patient 61,Normal,,LO,61,1
+Patient 61,Normal,,LO1,62,2
+Patient 62,Normal,4.0,LCC,20,6
+Patient 62,Normal,4.0,LO,13,4
+Patient 63,Suspicious, 1,LCC,33,2
+Patient 63,Suspicious, 1,LO,33,3
+Patient 64,Normal,3.0,LCC,43,1
+Patient 64,Normal,3.0,LML,49,4
+Patient 65,Normal,1.0,LCC,74,4
+Patient 65,Normal,1.0,LO,68,0
+Patient 66,Suspicious, 1,RCC,77,8
+Patient 66,Suspicious, 1,RO,70,2
+Patient 67,Suspicious, 2,RO,74,1
+Patient 67,Suspicious, 2,RO1,67,1
+Patient 68,Normal,3.0,RCC,78,9
+Patient 68,Normal,3.0,RO,80,8
+Patient 69,Normal,1.0, LCC,58,1
+Patient 69,Normal,1.0, RCC,57,7
+Patient 69,Normal,1.0, RO,64,9
+Patient 70,Suspicious, 2,LCC,38,1
+Patient 70,Suspicious, 2,LCC1,40,2
+Patient 70,Suspicious, 2,LO,31,0
+Patient 70,Suspicious, 2,LO1,45,4
+Patient 71,Normal,,RCC,24,7
+Patient 71,Normal,,RCC1,27,6
+Patient 71,Normal,,RO,26,5
+Patient 72,Normal,4.0, LCC,32,1
+Patient 72,Normal,4.0, LO,40,1
+Patient 72,Normal,4.0, RCC,24,4
+Patient 72,Normal,4.0, RO,29,0
+Patient 73,Normal,3.0, LCC,45,0
+Patient 73,Normal,3.0, LO,52,0
+Patient 73,Normal,3.0, RCC,51,5
+Patient 73,Normal,3.0, RO,47,0
+Patient 74,Normal,, LCC,28,0
+Patient 74,Normal,, LO,28,0
+Patient 75,Suspicious, 1,LCC,33,3
+Patient 75,Suspicious, 1,LO,40,0
+Patient 76,Normal,,RCC,41,5
+Patient 76,Normal,,RO,52,5
+Patient 77,Normal,, RCC,27,2
+Patient 77,Normal,, RCC1,27,3
+Patient 77,Normal,, RO,28,1
+Patient 77,Normal,, RO1,39,4
+Patient 78,Normal,1.0,RCC,19,6
+Patient 78,Normal,1.0,RML,37,2
+Patient 79,Normal,2.0,LCC,29,1
+Patient 79,Normal,2.0,LO,32,1
+Patient 80,Normal,,LCC,53,0
+Patient 80,Normal,,LO,63,2
+Patient 81,Normal,2.0,LCC,79,2
+Patient 81,Normal,2.0,LCC1,14,0
+Patient 81,Normal,2.0,LO,72,1
+Patient 81,Normal,2.0,LO1,33,0
+Patient 82,Suspicious, 2, LCC,21,0
+Patient 82,Suspicious, 2, LCC1,22,1
+Patient 82,Suspicious, 2, LO,28,0
+Patient 82,Suspicious, 2, LO1,25,0
+Patient 82,Suspicious, 2, RCC,16,2
+Patient 82,Suspicious, 2, RCC1,13,1
+Patient 82,Suspicious, 2, RO,24,0
+Patient 82,Suspicious, 2, RO1,22,1
+Patient 83,Suspicious, 2, LCC,80,5
+Patient 83,Suspicious, 2, LO,83,1
+Patient 83,Suspicious, 2, RCC,67,11
+Patient 83,Suspicious, 2, RO,75,6
+Patient 84,Normal,1.0,LCC,26,5
+Patient 84,Normal,1.0,LO,37,2
+Patient 85,Normal,2.0,LCC,36,0
+Patient 85,Normal,2.0,LO,43,6
+Patient 86,Normal,4.0,RCC,27,4
+Patient 86,Normal,4.0,RO,41,7
+Patient 87,Suspicious, 2,LCC,23,0
+Patient 87,Suspicious, 2,LCC1,23,5
+Patient 87,Suspicious, 2,LML,31,2
+Patient 87,Suspicious, 2,LML1,25,5
+Patient 88,Normal,3.0,RCC,64,11
+Patient 88,Normal,3.0,RO,54,6
+Patient 89,Suspicious, 1, LCC,54,0
+Patient 89,Suspicious, 1, LCC1,58,1
+Patient 89,Suspicious, 1, LO,59,2
+Patient 89,Suspicious, 1, LO1,67,0
+Patient 89,Suspicious, 1, RCC,32,10
+Patient 89,Suspicious, 1, RCC1,34,6
+Patient 89,Suspicious, 1, RO,47,7
+Patient 89,Suspicious, 1, RO1,50,3
+Patient 90,Normal,,LCC,29,1
+Patient 90,Normal,,LO,32,1
+Patient 91,Suspicious, 2,LCC,40,1
+Patient 91,Suspicious, 2,LML,47,2
+Patient 92,Suspicious, 3,LCC,38,1
+Patient 92,Suspicious, 3,LO,32,1
+Patient 93,Normal,, RCC,67,2
+Patient 93,Normal,, RO,76,6
+Patient 94,Suspicious, 1,LCC,29,1
+Patient 94,Suspicious, 1,LO,29,1
+Patient 94,Suspicious, 1,RCC,16,5
+Patient 94,Suspicious, 1,RO,26,5
+Patient 95,Normal,,RCC,27,5
+Patient 95,Normal,,RO,31,6
+Patient 96,Normal,4.0,RCC,31,8
+Patient 96,Normal,4.0,RO,45,5
+Patient 97,Suspicious, 1, LCC,43,0
+Patient 97,Suspicious, 1, LO,55,0
+Patient 97,Suspicious, 1, RCC,23,7
+Patient 97,Suspicious, 1, RO,45,11
+Patient 98,Suspicious, 1,RCC,19,3
+Patient 98,Suspicious, 1,RO,30,8
+Patient 99,Suspicious, 3, RCC,60,6
+Patient 99,Suspicious, 3, RO,59,6
+Patient 100,Suspicious, 3,LCC,72,6
+Patient 100,Suspicious, 3,LO,69,5
+Patient 101,Normal,4.0,LCC,99,10
+Patient 101,Normal,4.0,LO,62,6
+Patient 102,Normal,,RCC,27,6
+Patient 102,Normal,,RO,26,5
+Patient 103,Suspicious, 2,LCC,23,2
+Patient 103,Suspicious, 2,LO,22,0
+Patient 104,Suspicious, 4, LCC,35,0
+Patient 104,Suspicious, 4, LO,36,0
+Patient 104,Suspicious, 4, RCC,31,2
+Patient 104,Suspicious, 4, RO,36,3
+Patient 105,Suspicious, 1,RCC,46,9
+Patient 105,Suspicious, 1,RO,60,5
+Patient 106,Normal,,RCC,18,9
+Patient 106,Normal,,RO,24,3
+Patient 107,Suspicious, 1, LCC,21,1
+Patient 107,Suspicious, 1, LO,23,4
+Patient 107,Suspicious, 1, RCC,15,5
+Patient 107,Suspicious, 1, RO,23,7
+Patient 108,Suspicious, 1,LO,59,2
+Patient 108,Suspicious, 1,RO,58,3
+Patient 109,Suspicious, 1, LCC,25,1
+Patient 109,Suspicious, 1, LO,31,1
+Patient 110,Suspicious, 1, LCC,36,0
+Patient 110,Suspicious, 1, LO,40,0
+Patient 110,Suspicious, 1, RCC,37,5
+Patient 110,Suspicious, 1, RO,36,0
+Patient 111,Normal,3.0,LCC,51,2
+Patient 111,Normal,3.0,LML,54,1
+Patient 112,Suspicious, 3, LCC,44,1
+Patient 112,Suspicious, 3, LO,50,0
+Patient 112,Suspicious, 3, RCC,41,4
+Patient 112,Suspicious, 3, RO,55,2
+Patient 113,Suspicious, 2,RCC,29,5
+Patient 113,Suspicious, 2,RML,43,6
+Patient 114,Suspicious, NaN, LCC,17,1
+Patient 114,Suspicious, NaN, LO,20,2
+Patient 114,Suspicious, NaN, RCC,13,6
+Patient 114,Suspicious, NaN, RO,16,5
+Patient 115,Normal,3.0,RCC,60,16
+Patient 115,Normal,3.0,RO,67,11
+Patient 116,Normal,1.0,LCC,18,1
+Patient 116,Normal,1.0,LML,21,0
+Patient 117,Normal,2.0,LCC,51,0
+Patient 117,Normal,2.0,LO,56,1
+Patient 118,Suspicious, 1, RCC,19,1
+Patient 118,Suspicious, 1, RO,9,1
+Patient 119,Suspicious, 1,RCC,26,8
+Patient 119,Suspicious, 1,RML,52,8
+Patient 120,Normal,2.0,RCC,22,3
+Patient 120,Normal,2.0,RO,30,6
+Patient 121,Normal,,LCC,43,0
+Patient 121,Normal,,LO,52,2
+Patient 122,Suspicious, 1,LCC,98,1
+Patient 122,Suspicious, 1,LO,100,0
+Patient 123,Suspicious, 2,LCC,39,9
+Patient 123,Suspicious, 2,LO,40,5
+Patient 124,Suspicious, 3, LCC,17,0
+Patient 124,Suspicious, 3, LO,20,0
+Patient 124,Suspicious, 3, RCC,15,7
+Patient 124,Suspicious, 3, RO,16,5
+Patient 125,Suspicious, 1,LCC,52,2
+Patient 125,Suspicious, 1,LML,64,4
+Patient 126,Normal,3.0,LCC,35,0
+Patient 126,Normal,3.0,LCC1,35,0
+Patient 126,Normal,3.0,LO,41,0
+Patient 126,Normal,3.0,LO1,41,0
+Patient 127,Normal,3.0,RCC,38,1
+Patient 127,Normal,3.0,RO,41,4
+Patient 128,Suspicious, 3,RCC,24,7
+Patient 128,Suspicious, 3,RO,27,3
+Patient 129,Suspicious, 3,LCC,65,6
+Patient 129,Suspicious, 3,LCC1,50,3
+Patient 129,Suspicious, 3,LO,53,2
+Patient 129,Suspicious, 3,LO1,49,7
+Patient 130,Suspicious, 3, LCC,43,0
+Patient 130,Suspicious, 3, LO,38,0
+Patient 130,Suspicious, 3, RCC,41,3
+Patient 130,Suspicious, 3, RO,36,2
+Patient 131,Normal,,LCC,25,0
+Patient 131,Normal,,LML,31,0
+Patient 132,Suspicious, 2,RCC,41,15
+Patient 132,Suspicious, 2,RO,53,4
+Patient 133,Normal,3.0, LCC,52,0
+Patient 133,Normal,3.0, LO,58,0
+Patient 133,Normal,3.0, RCC,57,6
+Patient 133,Normal,3.0, RO,59,2
+Patient 134,Normal,4.0, LCC,39,0
+Patient 134,Normal,4.0, LO,40,0
+Patient 135,Suspicious, 1,RCC,21,2
+Patient 135,Suspicious, 1,RO,22,1
+Patient 136,Normal,, LCC,20,0
+Patient 136,Normal,, LCC1,20,0
+Patient 136,Normal,, LO,21,0
+Patient 136,Normal,, LO1,21,0
+Patient 136,Normal,, RCC,14,7
+Patient 136,Normal,, RCC1,6,3
+Patient 136,Normal,, RO,17,5
+Patient 136,Normal,, RO1,17,5
+Patient 137,Suspicious, 3, LCC,50,1
+Patient 137,Suspicious, 3, LO,46,0
+Patient 137,Suspicious, 3, RCC,38,4
+Patient 137,Suspicious, 3, RO,52,2
+Patient 138,Normal,1.0,LCC,32,2
+Patient 138,Normal,1.0,LCC1,32,2
+Patient 138,Normal,1.0,LO,42,3
+Patient 138,Normal,1.0,LO1,42,3
+Patient 139,Suspicious, 2, LCC,36,2
+Patient 139,Suspicious, 2, LO,30,1
+Patient 139,Suspicious, 2, RCC,31,4
+Patient 139,Suspicious, 2, RO,28,3
+Patient 140,Suspicious, NaN,LCC,38,1
+Patient 140,Suspicious, NaN,LO,32,1
+Patient 141,Suspicious, 3,LCC,30,1
+Patient 141,Suspicious, 3,LO,36,2
+Patient 142,Normal,2.0,LCC,52,0
+Patient 142,Normal,2.0,LCC1,58,1
+Patient 142,Normal,2.0,LO,60,0
+Patient 142,Normal,2.0,LO1,63,0
+Patient 142,Normal,2.0,RCC,32,4
+Patient 142,Normal,2.0,RCC1,30,5
+Patient 142,Normal,2.0,RO,39,3
+Patient 142,Normal,2.0,RO1,40,5
+Patient 143,Suspicious, 4, RCC,59,6
+Patient 143,Suspicious, 4, RO,63,2
+Patient 144,Normal,2.0, LCC,54,0
+Patient 144,Normal,2.0, LO,57,2
+Patient 144,Normal,2.0, RCC,62,5
+Patient 144,Normal,2.0, RO,61,4
