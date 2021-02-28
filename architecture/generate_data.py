@@ -16,7 +16,7 @@ def generate(dataframe,input_size):
         dataframe= dataframe,
         x_col= "paths",
         y_col= "labels",
-        batch_size= 64,
+        batch_size= 128,
         target_size= (input_size,input_size),
         color_mode= "rgb",
         class_mode= "categorical",

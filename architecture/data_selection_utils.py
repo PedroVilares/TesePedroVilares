@@ -146,6 +146,7 @@ def image_mover(df,p_dict):
     x_centers = []
     y_centers = []
     densities = []
+    image_paths = []
     for patient in p_dict.keys():
         patient_lines = df[df['patient_id'] == patient]
         patient_name = 'patient_'+str(num)
@@ -158,10 +159,12 @@ def image_mover(df,p_dict):
             num+=1
             continue
         views_copied = []
+        i=1
         for n in patient_lines.index:
             image_view = patient_lines['image_view'][n]
             if image_view in views_copied:
-                image_view = patient_lines['image_view'][n]+'1'
+                image_view = patient_lines['image_view'][n]+str(i)
+                i+=1
             image_path = patient_lines['image_path'][n]
             if image_type == 'dcm':
                 dicom_images(folder_name,image_path,image_view)
@@ -174,9 +177,10 @@ def image_mover(df,p_dict):
             y_centers.append(patient_lines['y_center'][n])
             image_views.append(image_view)
             densities.append(patient_lines['density'][n])
+            image_paths.append(image_path)
         print('Patient',patient,'saved!')
         num+=1
-    return patients,image_views,labels,x_centers,y_centers,densities
+    return patients,image_views,labels,x_centers,y_centers,densities,image_paths
 
 def raw_images(save_path,image_path,image_view):
     try:

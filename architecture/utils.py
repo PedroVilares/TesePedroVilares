@@ -22,9 +22,9 @@ def integrity_check():
     print('Checking patients folder...')
     patients_folder = 'D:/Architecture/patients/'
     patient_list = os.listdir(patients_folder)
-    patient_list = remove_csv(patient_list)
+    patient_list = sort_paths(patient_list)
     patient_number = len(patient_list)
-    print('--> {} patients detected!'.format(patient_number))
+    print('--> {} patients detected! \n'.format(patient_number))
     
     print('Checking mammographies...')    
     low_imgs = 0
@@ -38,7 +38,6 @@ def integrity_check():
                 not_images.append(image)
         for image in not_images:
             image_paths.remove(image)
-        
         a = len(image_paths)
         if a<2:
             low_imgs += 1

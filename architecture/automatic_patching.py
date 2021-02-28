@@ -71,6 +71,15 @@ def sistematic_patch_corners(binarized_array,patch_size,background_percentage,ov
             if bounding_box[3] > 150:
                 height_min = 350
                 width_min = width_min + 70
+    else:
+        if width_min < 500:
+            width_max = width_max - 150
+            height_max = height_max - 150
+            height_min = height_min + 150
+        else:
+            width_min = width_min + 150
+            height_max = height_max - 150
+            height_min = height_min + 150
 
     overlapping_percentage = overlapping
     overlap = overlapping_percentage*patch_size
@@ -86,7 +95,31 @@ def sistematic_patch_corners(binarized_array,patch_size,background_percentage,ov
             patch_vertex = (int(window_size1),int(window_size2),int(window_size3),int(window_size4))
             b_percentage = backround_calculator(binarized_array,patch_vertex)
             if b_percentage > background_percentage:
-                patch_vertexes.append(patch_vertex)
+                if width_min < 500:
+                    if int(window_size2) + 75 > bounding_box[2]:
+                        continue
+                    if binarized_array[int(window_size2) + 75,int(window_size4)] == 0:
+                        continue
+                    elif binarized_array[int(window_size2),int(window_size4)+75] == 0:
+                        continue
+                    elif binarized_array[int(window_size1) + 75,int(window_size4)] == 0:
+                        continue
+                    elif binarized_array[int(window_size1),int(window_size4) + 75] == 0:
+                        continue
+                    else:
+                        patch_vertexes.append(patch_vertex)
+                else:
+                    if binarized_array[int(window_size2) + 75,int(window_size3)] == 0:
+                        continue
+                    elif binarized_array[int(window_size2),int(window_size3)-75] == 0:
+                        continue
+                    elif binarized_array[int(window_size1) - 75,int(window_size3)] == 0:
+                        continue
+                    elif binarized_array[int(window_size1),int(window_size3) - 75] == 0:
+                        continue
+                    else:
+                        patch_vertexes.append(patch_vertex)
+
             window_size3 = window_size3 + (patch_size-overlap)
             window_size4 = window_size4 + (patch_size-overlap)
             n+=1
@@ -133,19 +166,49 @@ def random_patch_corners(binarized_array,patch_size,background_percentage):
             if bounding_box[3] > 150:
                 height_min = 350
                 width_min = width_min + 70
+    else:
+        if width_min < 500:
+            width_max = width_max - 150
+            height_max = height_max - 150
+            height_min = height_min + 150
+        else:
+            width_min = width_min + 150
+            height_max = height_max - 150
+            height_min = height_min + 150
 
     n_patches = int(np.floor(((width_max-width_min) * (height_max-height_min))/(patch_size*patch_size)))
     patch_vertexes = []
-    for i in range(round(4*n_patches)): #Qual deve ser o range?
-        x_center = random.randint(width_min+(patch_size/2)+50,width_max-(patch_size/2)-50)
-        y_center = random.randint(height_min+(patch_size/2)+50,height_max-(patch_size/2)-50)
+    for i in range(round(5*n_patches)): #Qual deve ser o range?
+        x_center = random.randint(width_min+(patch_size/2)+100,width_max-(patch_size/2)-100)
+        y_center = random.randint(height_min+(patch_size/2)+100,height_max-(patch_size/2)-100)
         if binarized_array[y_center,x_center] == 1:
             if binarized_array[int(y_center+(patch_size/2)),x_center] == 1 and binarized_array[int(y_center-(patch_size/2)),x_center]==1:
                 if binarized_array[y_center,int(x_center+patch_size/2)] == 1 and binarized_array[y_center,int(x_center-patch_size/2)]==1:
                     patch_vertex = (int(y_center-(patch_size/2)),int(y_center+(patch_size/2)),int(x_center-patch_size/2),int(x_center+patch_size/2))
                     b_percentage = backround_calculator(binarized_array,patch_vertex)
                     if b_percentage > background_percentage:
-                        patch_vertexes.append(patch_vertex)
+                        if width_min < 500:
+                            if binarized_array[int(y_center+(patch_size/2)) + 75,int(x_center+patch_size/2)] == 0:
+                                continue
+                            elif binarized_array[int(y_center+(patch_size/2)),int(x_center+patch_size/2)+75] == 0:
+                                continue
+                            elif binarized_array[int(y_center-(patch_size/2)) + 75,int(x_center+patch_size/2)] == 0:
+                                continue
+                            elif binarized_array[int(y_center-(patch_size/2)),int(x_center+patch_size/2) + 75] == 0:
+                                continue
+                            else:
+                                patch_vertexes.append(patch_vertex)
+                        else:
+                            if binarized_array[int(y_center+(patch_size/2)) + 75,int(x_center-patch_size/2)] == 0:
+                                continue
+                            elif binarized_array[int(y_center+(patch_size/2)),int(x_center-patch_size/2)-75] == 0:
+                                continue
+                            elif binarized_array[int(y_center-(patch_size/2)) - 75,int(x_center-patch_size/2)] == 0:
+                                continue
+                            elif binarized_array[int(y_center-(patch_size/2)),int(x_center-patch_size/2) - 75] == 0:
+                                continue
+                            else:
+                                patch_vertexes.append(patch_vertex)
 
     return patch_vertexes
 
@@ -178,14 +241,13 @@ def patches_by_image(image_path,patch_size,overlap):
         os.mkdir(folder)
         print('Successfully created '+'patches_'+image_view+' folder!')
     except OSError:
-        #print("Patch folder already exists!")
-        a=0
+        print("Patch folder already exists!")
 
     raw_mammogram_array = raw_mammogram(image_path)
     binarized_array = binarize_breast_region(raw_mammogram_array)
-    patches_vertexes_1 = sistematic_patch_corners(binarized_array,patch_size,0.97,overlap)
-    #patches_vertexes_2 = random_patch_corners(binarized_array,patch_size,0.97)
-    patches_vertexes = patches_vertexes_1 # + patches_vertexes_2
+    patches_vertexes_1 = sistematic_patch_corners(binarized_array,patch_size,0.99,overlap)
+    patches_vertexes_2 = random_patch_corners(binarized_array,patch_size,0.99)
+    patches_vertexes = patches_vertexes_1 + patches_vertexes_2
 
     for vertexes in patches_vertexes:
         patch = raw_mammogram_array[vertexes[0]:vertexes[1],vertexes[2]:vertexes[3]]
@@ -267,7 +329,7 @@ def show_binarized(patient_folder):
     else:
         cols = 4
     rows = np.ceil(len(image_paths)/cols).astype(np.int_)
-    f,s = plt.subplots(rows,cols,figsize=(20,20))
+    _,s = plt.subplots(rows,cols,figsize=(20,20))
     i=0
     for image in image_paths:
         image_view = image.split('.')[0]
@@ -298,7 +360,7 @@ def show_mammograms(patient_folder):
     else:
         cols = 4
     rows = np.ceil(len(image_paths)/cols).astype(np.int_)
-    f,s = plt.subplots(rows,cols,figsize=(20,20))
+    _,s = plt.subplots(rows,cols,figsize=(20,20))
     i=0
     for image in image_paths:
         image_view = image.split('.')[0]
@@ -313,32 +375,29 @@ def show_mammograms(patient_folder):
         i+=1
     return
 
-def patches_number(patient_folder,patch_size,overlap):
+def patches_number(patient_folder):
 
-    image_paths = os.listdir(patient_folder)
-    not_images = []
-    for image in image_paths:
-        if 't' in image:
-            not_images.append(image)
-    for image in not_images:
-        image_paths.remove(image)
+    folder_paths = os.listdir(patient_folder)
+    not_folders = []
+    for image in folder_paths:
+        if 't' not in image:
+            not_folders.append(image)
+    for image in not_folders:
+        folder_paths.remove(image)
 
     p_number = []
-    for image in image_paths:
-        image_view = image.split('.')[0]
-        path = patient_folder+image
-        mammogram = raw_mammogram(path)
-        binarized_array = binarize_breast_region(mammogram)
-        patches_vertexes_1 = sistematic_patch_corners(binarized_array,patch_size,0.95,overlap)
-        patches_vertexes_2 = random_patch_corners(binarized_array,patch_size,0.95)
-        patches_vertexes = patches_vertexes_1 + patches_vertexes_2
-        p_number.append(len(patches_vertexes))
-        print('Patches extracted from '+image_view+':',len(patches_vertexes))
+    for patch_folder in folder_paths:
+        if 'p' in patch_folder:
+            patch_list = os.listdir(patient_folder+patch_folder)
+            patches_by_image = len(patch_list)
+            p_number.append(patches_by_image)
+            image_view = patch_folder.split('_')[1]
+            print('Patches extracted from '+image_view+':',patches_by_image)
 
     print('Total:',sum(p_number))
     return
 
-def show_sides(patient_folder,patch_size,overlap):
+def show_sides(patient_folder):
     """Função que representa os centros dos patches numa mamografia 
 
     Args:
@@ -357,21 +416,33 @@ def show_sides(patient_folder,patch_size,overlap):
     for image in not_images:
         image_paths.remove(image)
 
+    patient = patient_folder.split('/')[1]
+    patch_dataframe = pd.read_csv('patients/'+patient+'/classification_data.csv')
+
+    vertexes = dict()
+    df_list = [df for df in patch_dataframe.groupby('Image View')]
+    for df_tuple in df_list:
+
+        df = df_tuple[1].reset_index()
+        real_vertexes = []
+        for i in df.index:
+            string_tuple = df['Patches Vertexes'][i]
+            a = [int(i) for i in string_tuple[1:-1].split(',')]
+            real_vertexes.append(tuple(a))
+        vertexes[df['Image View'][0]] = real_vertexes
+
     if len(image_paths) < 4:
         cols = 2
     else:
         cols = 4
     rows = np.ceil(len(image_paths)/cols).astype(np.int_)
-    f,s = plt.subplots(rows,cols,figsize=(20,20))
+    _,s = plt.subplots(rows,cols,figsize=(20,20))
     i=0
     for image in image_paths:
         image_view = image.split('.')[0]
         path = patient_folder+image
         mammogram = raw_mammogram(path)
-        binarized_array = binarize_breast_region(mammogram)
-        patches_vertexes_1 = sistematic_patch_corners(binarized_array,patch_size,0.95,overlap)
-        patches_vertexes_2 = random_patch_corners(binarized_array,patch_size,0.95)
-        patches_vertexes = patches_vertexes_1 + patches_vertexes_2
+        patches_vertexes = vertexes[image_view]
         line_side = 15
         for vertex in patches_vertexes:
             mammogram[vertex[0]:vertex[1],vertex[3]-line_side:vertex[3]+line_side] = 0 
@@ -389,7 +460,7 @@ def show_sides(patient_folder,patch_size,overlap):
 
     return
 
-def show_centers(patient_folder,patch_size,overlap):
+def show_centers(patient_folder,patch_size):
     """Função que representa os centros dos patches numa mamografia 
 
     Args:
@@ -407,22 +478,34 @@ def show_centers(patient_folder,patch_size,overlap):
     for image in not_images:
         image_paths.remove(image)
 
+    patient = patient_folder.split('/')[1]
+    patch_dataframe = pd.read_csv('patients/'+patient+'/classification_data.csv')
+
+    vertexes = dict()
+    df_list = [df for df in patch_dataframe.groupby('Image View')]
+    for df_tuple in df_list:
+
+        df = df_tuple[1].reset_index()
+        real_vertexes = []
+        for i in df.index:
+            string_tuple = df['Patches Vertexes'][i]
+            a = [int(i) for i in string_tuple[1:-1].split(',')]
+            real_vertexes.append(tuple(a))
+        vertexes[df['Image View'][0]] = real_vertexes
+
     if len(image_paths) < 4:
         cols = 2
     else:
         cols = 4
     rows = np.ceil(len(image_paths)/cols).astype(np.int_)
-    f,s = plt.subplots(rows,cols,figsize=(20,20))
+    _,s = plt.subplots(rows,cols,figsize=(20,20))
     i=0
     half_side = int(patch_size/2)
     for image in image_paths:
         image_view = image.split('.')[0]
         path = patient_folder+image
         mammogram = raw_mammogram(path)
-        binarized_array = binarize_breast_region(mammogram)
-        patches_vertexes_1 = sistematic_patch_corners(binarized_array,patch_size,0.95,overlap)
-        patches_vertexes_2 = random_patch_corners(binarized_array,patch_size,0.95)
-        patches_vertexes = patches_vertexes_1 + patches_vertexes_2
+        patches_vertexes = vertexes[image_view]
         n = 25
         center_side = int(half_side-n)
         for vertex in patches_vertexes:
@@ -463,7 +546,7 @@ def show_positive_patches_on_mammography(patient_number,patch_size,overlap,thres
         positive_patches = []
         n=0
         for pred in predictions:
-            if pred > 0.95:
+            if pred > threshold:
                 positive_patches.append(n)
             n+=1
         if len(positive_patches) == 0:
@@ -479,42 +562,79 @@ def show_positive_patches_on_mammography(patient_number,patch_size,overlap,thres
         print('No suspicious patches detected!')
         return
 
-    cols = len(vertexes.keys())
-    rows = np.ceil(len(image_paths)/cols).astype(np.int_)
-    _,s = plt.subplots(rows,cols,figsize=(20,20))
-    patient_label = list(patient_df['label'])[0]    
+    patient_label = list(patient_df['label'])[0]   
+    if patient_label == 'Suspicious':
+        if len(image_paths) <5:
+            cols = len(image_paths)
+        else:
+            cols = 4
+        rows = np.ceil(len(image_paths)/4).astype(np.int_)
+    else:
+        if len(vertexes.keys()) <5:
+            cols = len(vertexes.keys())
+        else:
+            cols = 4
+        rows = np.ceil(len(vertexes.keys())/4).astype(np.int_)
+
+    _,s = plt.subplots(rows,cols,figsize=(20,20)) 
     i=0
     for image in image_paths:
         image_view = image.split('.')[0]
-        if image_view in vertexes.keys():
+        if patient_label == 'Suspicious':
             path = patient_folder+image
             mammogram = raw_mammogram(path)
-            patches_vertexes = vertexes[image_view]
-            if patient_label == 'Suspicious':
-                df_lines = patient_df[patient_df['image view'] == image_view]
-                for line in df_lines.index:
-                    x_center = int(round(mammogram.shape[0]*df_lines['x_center'][line]))
-                    y_center = int(round(mammogram.shape[1]*df_lines['y_center'][line]))
-                    line_side = 15
-                    half_side = int(patch_size/2)
-                    mammogram[y_center-half_side:y_center+half_side,x_center-half_side-line_side:x_center-half_side+line_side] = 1
-                    mammogram[y_center+half_side-line_side:y_center+half_side+line_side,x_center-half_side:x_center+half_side] = 1
-                    mammogram[y_center-half_side:y_center+half_side,x_center+half_side-line_side:x_center+half_side+line_side] = 1
-                    mammogram[y_center-half_side-line_side:y_center-half_side+line_side,x_center-half_side:x_center+half_side] = 1
-            line_side = 15
-            for vertex in patches_vertexes:
-                mammogram[vertex[0]:vertex[1],vertex[3]-line_side:vertex[3]+line_side] = 0 
-                mammogram[vertex[0]-line_side:vertex[0]+line_side,vertex[2]:vertex[3]] = 0 
-                mammogram[vertex[0]:vertex[1],vertex[2]-line_side:vertex[2]+line_side] = 0 
-                mammogram[vertex[1]-line_side:vertex[1]+line_side,vertex[2]:vertex[3]] = 0
+            df_lines = patient_df[patient_df['image view'] == image_view]
+            for line in df_lines.index:
+                x_center = int(round(mammogram.shape[1]*df_lines['x_center'][line]))
+                y_center = int(round(mammogram.shape[0]*df_lines['y_center'][line]))
+                line_side = 15
+                half_side = int(patch_size/2)
+                mammogram[y_center-half_side:y_center+half_side,x_center-half_side-line_side:x_center-half_side+line_side] = 1
+                mammogram[y_center+half_side-line_side:y_center+half_side+line_side,x_center-half_side:x_center+half_side] = 1
+                mammogram[y_center-half_side:y_center+half_side,x_center+half_side-line_side:x_center+half_side+line_side] = 1
+                mammogram[y_center-half_side-line_side:y_center-half_side+line_side,x_center-half_side:x_center+half_side] = 1
+            if image_view in vertexes.keys():
+                patches_vertexes = vertexes[image_view]
+                line_side = 15
+                for vertex in patches_vertexes:
+                    mammogram[vertex[0]:vertex[1],vertex[3]-line_side:vertex[3]+line_side] = 0 
+                    mammogram[vertex[0]-line_side:vertex[0]+line_side,vertex[2]:vertex[3]] = 0 
+                    mammogram[vertex[0]:vertex[1],vertex[2]-line_side:vertex[2]+line_side] = 0 
+                    mammogram[vertex[1]-line_side:vertex[1]+line_side,vertex[2]:vertex[3]] = 0
             if rows == 1:
-                s[i%cols].imshow(mammogram,cmap='gray')
-                s[i%cols].set_title(image_view)
+                if cols == 1:
+                    s.imshow(mammogram,cmap='gray')
+                    s.set_title(image_view)
+                else:    
+                    s[i%cols].imshow(mammogram,cmap='gray')
+                    s[i%cols].set_title(image_view)
             else:
                 s[i//cols,i%cols].imshow(mammogram,cmap='gray')
                 s[i//cols,i%cols].set_title(image_view)
-            i+=1
-    
+            
+            i += 1
+        else:
+            if image_view in vertexes.keys():
+                path = patient_folder+image
+                mammogram = raw_mammogram(path)
+                patches_vertexes = vertexes[image_view]
+                line_side = 15
+                for vertex in patches_vertexes:
+                    mammogram[vertex[0]:vertex[1],vertex[3]-line_side:vertex[3]+line_side] = 0 
+                    mammogram[vertex[0]-line_side:vertex[0]+line_side,vertex[2]:vertex[3]] = 0 
+                    mammogram[vertex[0]:vertex[1],vertex[2]-line_side:vertex[2]+line_side] = 0 
+                    mammogram[vertex[1]-line_side:vertex[1]+line_side,vertex[2]:vertex[3]] = 0
+                if rows == 1:
+                    if cols == 1:
+                        s.imshow(mammogram,cmap='gray')
+                        s.set_title(image_view)
+                    else:    
+                        s[i%cols].imshow(mammogram,cmap='gray')
+                        s[i%cols].set_title(image_view)
+                else:
+                    s[i//cols,i%cols].imshow(mammogram,cmap='gray')
+                    s[i//cols,i%cols].set_title(image_view)
+                i += 1
     return
 
 def preprocessing_mammography(image_array):
