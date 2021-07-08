@@ -1,4 +1,4 @@
 # TesePedroVilares
 Tese Pedro Vilares
 
-Correr o Notebook. Os ficheiros .py são funções acessórias.
+Within each folder, run .ipynb notebooks. The .py files contain helper functions.
